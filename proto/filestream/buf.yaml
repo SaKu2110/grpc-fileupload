@@ -1,0 +1,13 @@
+version: v1
+name: buf.build/grpc/filestream
+deps:
+  - buf.build/googleapis/googleapis
+  - buf.build/acme/paymentapis
+lint:
+  use:
+    - DEFAULT
+  except:
+    - PACKAGE_DIRECTORY_MATCH
+breaking:
+  use:
+    - FILE

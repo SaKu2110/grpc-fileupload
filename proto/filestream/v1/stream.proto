@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package filestream.v1;
+
+option go_package = "github.com/SaKu2110/grpc/proto/gen/go;filestream";
+
+service FileService {
+  rpc Upload(stream UploadRequest) returns (UploadResponse);
+}
+
+message UploadRequest {
+  string file_path = 2;
+  bytes  file_data = 3;
+}
+
+message UploadResponse {
+  string message = 1;
+}
